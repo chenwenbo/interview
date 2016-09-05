@@ -154,3 +154,9 @@ Statement执行一条sql就得编译一次，PrepareStatement只编译一次；�
 * 子类不能父类的构造方法，只能调用父类的构造方法
 * 子类可以给父类赋值，但是不能调用子类独有的方法
 * 父类不能给子类赋值。
+
+### Java修饰符
+* private 类内部 
+* default 类内部 同一包中 
+* protected 类内部 同一包中 子类 
+* public 类内部 同一包中 子类 任何地方
