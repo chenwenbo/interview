@@ -136,7 +136,7 @@ System.out.println(d.equals(i));//false
 ### JDBC Statement VS PrepareStatement
 Statement执行一条sql就得编译一次，PrepareStatement只编译一次；常用后者原因在于参数设置非常方便；执行一条sql就得编译一次，后者只编译一次；还有就是sql放置的位置不同; 常用后者原因在于参数设置非常方便；
 
-**使用PrepareStatement的好处
+**使用PrepareStatement的好处**
 
 * 代码的可读性和可维护性.
 * PreparedStatement尽最大可能提高性能.
