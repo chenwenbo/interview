@@ -100,6 +100,17 @@ System.out.println(l.equals(d));//false
 System.out.println(d.equals(i));//false
 ```
 
+1) boolean不可以转换为其他的数据类型
+
+2) 整数型，浮点类型，字符型是可以相互转换的，转换时遵守下面的原则：
+    a. 容量小的类型自动转换为大的类型，数据类型按容量大小排序为：
+    　　　　　byte, short, char < int < long <float < double
+    b. byte, short, char 三种类型间不会相互转换，他们三者在计算时，首先会转换为int类型
+    c. 容量大的类型在转换为小的类型的时候，必须加上强制转换符，此时可能造成精度降低或者溢出问题
+    d. 有多种数据类型混合计算的时候，系统首先自动转换为容量最大的那个类型再来继续计算
+    e. 实数类型默认为double类型，如， 1.2； 整数类型默认为int类型，如 1
+
+
 ### Java编译相关
 ** 环境变量可在编译source code时指定
 ** javac一次可同时编译数个Java源文件
