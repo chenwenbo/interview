@@ -85,3 +85,22 @@ JVM中存在两种线程：用户线程和守护线程。
 * call by reference不能改变实际参数的参考地址
 * call by reference能改变实际参数的内容
 
+### 基本数据类型之间的比较
+* 基本数据类型的包装类之间比较不会进行拆箱操作
+* 基本数据类型的equals函数不会进行转型。
+```
+Integer i = 42;
+Long l = 42l;
+Double d = 42.0;
+System.out.println(i==l); //compile error
+System.out.println(i==d);//compile error
+System.out.println(l==d);//compile error
+System.out.println(l.equals(i));//false
+System.out.println(l.equals(d));//false
+System.out.println(d.equals(i));//false
+```
+
+### Java编译相关
+** 环境变量可在编译source code时指定
+** javac一次可同时编译数个Java源文件
+** javac.exe能指定编译结果要置于哪个目录（directory）
