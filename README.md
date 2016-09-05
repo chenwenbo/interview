@@ -160,3 +160,14 @@ Statement执行一条sql就得编译一次，PrepareStatement只编译一次；�
 * default 类内部 同一包中 
 * protected 类内部 同一包中 子类 
 * public 类内部 同一包中 子类 任何地方
+
+### Java赋值
+JAVA的赋值运算是有返回值的，赋了什么值，就返回什么值。
+if(flag =true) is ok
+
+### Java native
+Java中定义的native方法不需要实现，即不存在方法体
+
+### Java Class
+getClass().getName() - 子类包名+类名
+getClass().getSuperClass().getSuperName()
