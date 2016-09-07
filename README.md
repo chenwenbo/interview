@@ -171,3 +171,7 @@ Java中定义的native方法不需要实现，即不存在方法体
 ### Java Class
 getClass().getName() - 子类包名+类名
 getClass().getSuperClass().getSuperName()
+
+### i++ VS ++i
+* ++i 会先对自身进行赋值
+* i++ 不会对自身进行赋值
