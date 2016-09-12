@@ -38,7 +38,7 @@ public class StrTest {
     }
 
     @Test
-    public void char_other_bit_should_be_long_other_bit() throws Exception {
+    public void char_more_bit_should_be_long_more_bit() throws Exception {
         assertEquals(1111, str.convert("1111"));
         assertEquals(22222, str.convert("22222"));
         assertEquals(333333, str.convert("333333"));
