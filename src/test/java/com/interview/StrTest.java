@@ -1,4 +1,4 @@
-package co.interview;
+package com.interview;
 
 
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package co.interview;
+package com.interview;
 
 /**
  * convert String to number
