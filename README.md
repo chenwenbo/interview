@@ -171,3 +171,17 @@ Java中定义的native方法不需要实现，即不存在方法体
 ### Java Class
 getClass().getName() - 子类包名+类名
 getClass().getSuperClass().getSuperName()
+
+### i++ VS ++i
+* ++i 会先对自身进行赋值
+* i++ 不会对自身进行赋值
+
+### Spring IOC
+优点：通过依赖注入的方式构建对象，管理对象的生命周期，减少代码的耦合，通过配置的方式生命对象的依赖关系，方便测试，支持加载服务时的饿汗式和懒加载。
+依赖注入的方式：
+* 构造器注入
+* setter方法注入
+推荐使用构造器方式实现强制依赖，setter方式提供可选依赖.
+
+### session cookie
+
