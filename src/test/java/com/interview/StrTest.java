@@ -4,7 +4,6 @@ package com.interview;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 /**
  *  interview program test case
  *  description : convert string to number
