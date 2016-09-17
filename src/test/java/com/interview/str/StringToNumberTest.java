@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.str;
 
 
 import org.junit.Test;
@@ -11,9 +11,9 @@ import static org.junit.Assert.assertEquals;
  *       "11" --> 11 , "22" --> 22
  *       "111" --> 111 , "222" --> 222
  */
-public class StrTest {
+public class StringToNumberTest {
 
-    private Str str = new Str();
+    private StringToNumber str = new StringToNumber();
 
     @Test
     public void char_single_should_be_long_single() throws Exception {

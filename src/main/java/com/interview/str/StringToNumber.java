@@ -1,9 +1,9 @@
-package com.interview;
+package com.interview.str;
 
 /**
  * convert String to number
  */
-public class Str {
+public class StringToNumber {
 
     public static final char ZERO_CHAR = '0';
 
