@@ -1,15 +1,49 @@
 package com.interview;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class NewArrayList {
-    public static void main(String[] args) {
-        int i = 0;
-        System.out.println(i++);
-        System.out.println(i++);
-        List<String> list = new ArrayList<String>();
-        list.add("hello");
-        System.out.println(list.get(0));
+    private Object[] elementData;
+    private Object[] EMPTY_ELEMENTDATA = {};
+    private int size;
+
+    public NewArrayList() {
+        this.elementData = EMPTY_ELEMENTDATA;
+    }
+
+    public void add(Object o){
+        ensureCapital(size+1);
+        elementData[size++]=o;
+    }
+
+    private void ensureCapital(int minCapacity) {
+        if(elementData==EMPTY_ELEMENTDATA){
+            minCapacity = 10;
+        }
+        if(minCapacity>elementData.length){
+            grows(minCapacity);
+        }
+    }
+
+    private void grows(int minCapacity) {
+        int oldCapacity = elementData.length;
+        int newCapacity = oldCapacity + (oldCapacity >> 1);
+
+        if (newCapacity - minCapacity < 0) {
+            newCapacity = minCapacity;
+        }
+        if(newCapacity>elementData.length){
+            String[] newElements = new String[newCapacity];
+            System.arraycopy(elementData, 0, newElements, 0, elementData.length);
+            elementData = newElements;
+        }
+    }
+
+    public Object get(int num){
+        return elementData[num];
+    }
+
+    public int size(){
+        return size;
     }
 }
