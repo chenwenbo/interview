@@ -1,8 +1,7 @@
 package com.interview;
 
-
-
 public class ArrayList {
+
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     private Object[] elementData;
     private Object[] EMPTY_ELEMENTDATA = {};
