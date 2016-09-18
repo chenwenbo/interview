@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Administrator on 2016/9/18.
  */
-public class NewArrayListTest {
+public class ArrayListTest {
 
-    private NewArrayList list = new NewArrayList();
+    private ArrayList list = new ArrayList();
 
     @Before
     public void initList(){

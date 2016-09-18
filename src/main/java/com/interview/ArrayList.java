@@ -2,12 +2,13 @@ package com.interview;
 
 
 
-public class NewArrayList {
+public class ArrayList {
+    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     private Object[] elementData;
     private Object[] EMPTY_ELEMENTDATA = {};
     private int size;
 
-    public NewArrayList() {
+    public ArrayList() {
         this.elementData = EMPTY_ELEMENTDATA;
     }
 
@@ -31,6 +32,9 @@ public class NewArrayList {
 
         if (newCapacity - minCapacity < 0) {
             newCapacity = minCapacity;
+        }
+        if (newCapacity - MAX_ARRAY_SIZE > 0){
+            newCapacity = Integer.MAX_VALUE;
         }
         if(newCapacity>elementData.length){
             String[] newElements = new String[newCapacity];
