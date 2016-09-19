@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.interview;
+package com.interview.code;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,13 +11,22 @@ import java.util.ArrayList;
  */
 public class CodeCounter {
 
+	public static final String CODE_RESOURCE = "src";
+
+	private static long files = 0;  // 文件数
+	private static long codeLines = 0; //代码行数
+	private static long commentLines = 0; //注释行数
+	private static long blankLines = 0; //空白行数
+
+	private static ArrayList<File> fileArray = new ArrayList<File>();
+
 	/**
 	 * 代码行数统计
 	 */
-	public static void main(String[] args) {
-		String file = CodeCounter.class.getResource("/").getFile();
-		System.err.println(file);
-		String path = file.replace("target/test-classes", "src");
+	public static void main(String[] args) throws IOException {
+
+		File dir = new File(".");
+		String path = dir.getCanonicalPath() + File.separator + CODE_RESOURCE;
 
 		ArrayList<File> al = getFile(new File(path));
 		for (File f : al) {
@@ -32,12 +41,7 @@ public class CodeCounter {
 		System.out.println("空白行数：" + blankLines);
 	}
 	
-	static long files = 0;
-	static long codeLines = 0;
-	static long commentLines = 0;
-	static long blankLines = 0;
-	static ArrayList<File> fileArray = new ArrayList<File>();
-	
+
 	/**
 	 * 获得目录下的文件和子目录下的文件
 	 * @param f
