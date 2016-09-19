@@ -21,9 +21,15 @@ public class DrawImageTest {
     }
 
     @Test
-    public void drawImageTest() throws IOException {
+    public void drawWordImageTest() throws IOException {
         drawImage.drawWordInImage(imagePrefix+"icon.jpg","2","jpg",imagePrefix+"icon_new.jpg");
         drawImage.drawWordInImage(imagePrefix+"icon1.jpg","2","jpg",imagePrefix+"icon1_new.jpg");
+    }
+
+    @Test
+    public void drawIphone5ImageTest() throws IOException {
+        drawImage.generateIphone5Image(imagePrefix+"icon.jpg","2","jpg",imagePrefix+"icon_new.jpg");
+        drawImage.generateIphone5Image(imagePrefix+"icon1.jpg","2","jpg",imagePrefix+"icon1_new.jpg");
     }
 
 }

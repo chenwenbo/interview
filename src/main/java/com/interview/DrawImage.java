@@ -35,6 +35,39 @@ public class DrawImage {
         }
     }
 
+    /**
+     * 生成iphone5的尺寸
+     * @param srcImagePath
+     * @param word
+     * @param formatName
+     * @param targetPath
+     * @throws IOException
+     */
+    public void generateIphone5Image(String srcImagePath, String word, String formatName, String targetPath) throws IOException {
+        FileOutputStream fos=null;
+        try {
+            BufferedImage image = ImageIO.read(new File(srcImagePath));
+            drawImage(image);
+
+            fos=new FileOutputStream(targetPath);
+            ImageIO.write(image, formatName, fos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            if(fos!=null){
+                fos.close();
+            }
+        }
+    }
+
+    private void drawImage(BufferedImage image) {
+         //创建java2D对象
+        Graphics2D g2d=image.createGraphics();
+        //用源图像填充背景
+        g2d.drawImage(image, 0, 0, image.getWidth()/2, image.getHeight()/2, null);
+        g2d.dispose();
+    }
+
     private void drawImage(String num, BufferedImage image) {
         //创建java2D对象
         Graphics2D g2d=image.createGraphics();
