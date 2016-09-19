@@ -23,10 +23,7 @@ public class CodeCounter {
 	/**
 	 * 代码行数统计
 	 */
-	public static void main(String[] args) throws IOException {
-
-		File dir = new File(".");
-		String path = dir.getCanonicalPath() + File.separator + CODE_RESOURCE;
+	public void printAnalyzeResult(String path) throws IOException {
 
 		ArrayList<File> al = getFile(new File(path));
 		for (File f : al) {
@@ -47,7 +44,7 @@ public class CodeCounter {
 	 * @param f
 	 * @return
 	 */
-	public static ArrayList<File> getFile(File f) {
+	private ArrayList<File> getFile(File f) {
 		File[] ff = f.listFiles();
 		for (File child : ff) {
 			if (child.isDirectory()) {
@@ -63,7 +60,7 @@ public class CodeCounter {
 	 * 统计方法
 	 * @param f
 	 */
-	private static void count(File f) {
+	private void count(File f) {
 		BufferedReader br = null;
 		boolean flag = false;
 		try {
