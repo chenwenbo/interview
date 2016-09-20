@@ -1,5 +1,6 @@
 package com.interview.yeap;
 
+import com.interview.other.Yeap;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

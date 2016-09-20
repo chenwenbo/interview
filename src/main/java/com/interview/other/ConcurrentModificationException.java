@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.other;
 
 import java.util.ArrayList;
 import java.util.Iterator;

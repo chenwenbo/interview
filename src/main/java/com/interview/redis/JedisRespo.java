@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.redis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

@@ -1,4 +1,4 @@
-package com.interview.yeap;
+package com.interview.other;
 
 public class Yeap {
     public boolean isYeap(int yeap) {

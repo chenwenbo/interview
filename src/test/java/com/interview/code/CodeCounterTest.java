@@ -1,12 +1,13 @@
 package com.interview.code;
 
+import com.interview.question007.CodeCounter;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 
-import static com.interview.code.CodeCounter.CODE_RESOURCE;
+import static com.interview.question007.CodeCounter.CODE_RESOURCE;
 
 /**
  * Created by Administrator on 2016/9/19.

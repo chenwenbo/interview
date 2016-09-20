@@ -1,5 +1,6 @@
 package com.interview;
 
+import com.interview.question000.DrawImage;
 import org.junit.Before;
 import org.junit.Test;
 

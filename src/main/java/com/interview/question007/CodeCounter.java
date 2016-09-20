@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.interview.code;
+package com.interview.question007;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.question000;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

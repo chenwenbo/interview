@@ -1,7 +1,12 @@
-package com.interview.Words;
+package com.interview.question004;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Words {
@@ -19,7 +24,7 @@ public class Words {
         return result;
     }
 
-    private static String[] readFile(File file) throws IOException {
+    public static String[] readFileSplitByBlank(File file) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         StringBuffer sbf = new StringBuffer();
         String line = null;
@@ -29,9 +34,19 @@ public class Words {
         return sbf.toString().split(" ");
     }
 
+    public static List<String> readFileSplitByLine(File file) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        List<String> words = new ArrayList<>();
+        String word = null;
+        while ((word = bufferedReader.readLine())!=null){
+            words.add(word.trim());
+        }
+        return words;
+    }
+
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
-        String[] words = readFile(new File(dir.getCanonicalFile() + File.separator + "words"));
+        String[] words = readFileSplitByBlank(new File(dir.getCanonicalFile() + File.separator + "words"));
         printWordCount(words);
     }
 }
