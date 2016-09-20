@@ -28,8 +28,9 @@ public class DrawImageTest {
 
     @Test
     public void drawIphone5ImageTest() throws IOException {
-        drawImage.generateIphone5Image(imagePrefix+"icon.jpg","2","jpg",imagePrefix+"icon_new.jpg");
-        drawImage.generateIphone5Image(imagePrefix+"icon1.jpg","2","jpg",imagePrefix+"icon1_new.jpg");
+        drawImage.generateIphone5Image(imagePrefix+"icon.jpg","jpg",imagePrefix+"icon_iphone5.jpg");
+        drawImage.generateIphone5Image(imagePrefix+"icon1.jpg","jpg",imagePrefix+"icon1_iphone5.jpg");
+        drawImage.generateIphone5Image(imagePrefix+"icon2.jpg","jpg",imagePrefix+"icon2_iphone5.jpg");
     }
 
 }

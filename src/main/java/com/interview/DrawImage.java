@@ -3,14 +3,17 @@ package com.interview;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.File;
 
 /**
  * 将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。
  */
 public class DrawImage {
+
+    private static final int IPHONE5_WIDTH = 640;
+    private static final int IPHONE5_HEIGHT = 1136;
 
     /**
      * 在图片上设置文字
@@ -22,10 +25,8 @@ public class DrawImage {
         FileOutputStream fos=null;
         try {
             BufferedImage image = ImageIO.read(new File(srcImagePath));
-            drawImage(word, image);
-
             fos=new FileOutputStream(targetPath);
-            ImageIO.write(image, formatName, fos);
+            ImageIO.write(drawImage(word, image), formatName, fos);
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
@@ -38,19 +39,17 @@ public class DrawImage {
     /**
      * 生成iphone5的尺寸
      * @param srcImagePath
-     * @param word
      * @param formatName
      * @param targetPath
      * @throws IOException
      */
-    public void generateIphone5Image(String srcImagePath, String word, String formatName, String targetPath) throws IOException {
+    public void generateIphone5Image(String srcImagePath, String formatName, String targetPath) throws IOException {
         FileOutputStream fos=null;
         try {
             BufferedImage image = ImageIO.read(new File(srcImagePath));
-            drawImage(image);
-
             fos=new FileOutputStream(targetPath);
-            ImageIO.write(image, formatName, fos);
+            ImageIO.write(drawImage(image), formatName, fos);
+
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
@@ -60,15 +59,24 @@ public class DrawImage {
         }
     }
 
-    private void drawImage(BufferedImage image) {
-         //创建java2D对象
-        Graphics2D g2d=image.createGraphics();
-        //用源图像填充背景
-        g2d.drawImage(image, 0, 0, image.getWidth()/2, image.getHeight()/2, null);
-        g2d.dispose();
+    private BufferedImage drawImage(BufferedImage image) {
+        int widthRate = image.getWidth()/DrawImage.IPHONE5_WIDTH;
+        int heightRate = image.getHeight()/DrawImage.IPHONE5_HEIGHT;
+        //判断分辨率是否满足
+        if(widthRate>1 || heightRate >1){
+            int rate = widthRate > heightRate ? widthRate : heightRate;
+            BufferedImage img = new BufferedImage(image.getWidth()/rate, image.getHeight()/rate, BufferedImage.TYPE_INT_RGB);
+            //创建java2D对象
+            Graphics2D g2d = (Graphics2D) img.getGraphics();
+            //用源图像填充背景
+            g2d.drawImage(image, 0, 0, image.getWidth()/rate, image.getHeight()/rate, null);
+            g2d.dispose();
+            return img;
+        }
+        return image;
     }
 
-    private void drawImage(String num, BufferedImage image) {
+    private BufferedImage drawImage(String num, BufferedImage image) {
         //创建java2D对象
         Graphics2D g2d=image.createGraphics();
         //用源图像填充背景
@@ -81,6 +89,7 @@ public class DrawImage {
         g2d.setColor(Color.RED);//设置字体颜色
         g2d.drawString(num, image.getWidth()-image.getWidth()/5, image.getHeight()/5);
         g2d.dispose();
+        return image;
     }
 
 }
