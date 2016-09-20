@@ -13,12 +13,12 @@ public class CodeCounter {
 
 	public static final String CODE_RESOURCE = "src";
 
-	private static long files = 0;  // 文件数
-	private static long codeLines = 0; //代码行数
-	private static long commentLines = 0; //注释行数
-	private static long blankLines = 0; //空白行数
+	private long files = 0;  // 文件数
+	private long codeLines = 0; //代码行数
+	private long commentLines = 0; //注释行数
+	private long blankLines = 0; //空白行数
 
-	private static ArrayList<File> fileArray = new ArrayList<File>();
+	private ArrayList<File> fileArray = new ArrayList<File>();
 
 	/**
 	 * 代码行数统计

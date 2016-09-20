@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.interview.question004.Words.printWordCount;
+import static com.interview.question004.Words.getWordCount;
 import static com.interview.question004.Words.readFileSplitByBlank;
 import static com.interview.question004.Words.readFileSplitByLine;
 import static org.junit.Assert.assertEquals;
@@ -29,21 +29,21 @@ public class WordsTest {
     @Test
     public void one_word_test() throws Exception {
         String[] strs = {"hello"};
-        Map<String, Integer> result = printWordCount(strs);
+        Map<String, Integer> result = getWordCount(strs);
         assertEquals(new Integer(1),result.get("hello"));
     }
 
     @Test
     public void two_same_word_test() throws Exception {
         String[] strs = {"hello","hello"};
-        Map<String, Integer> result = printWordCount(strs);
+        Map<String, Integer> result = getWordCount(strs);
         assertEquals(new Integer(2),result.get("hello"));
     }
 
     @Test
     public void two_different_word_test() throws Exception {
         String[] strs = {"hello", "world"};
-        Map<String, Integer> result = printWordCount(strs);
+        Map<String, Integer> result = getWordCount(strs);
         assertEquals(new Integer(1), result.get("hello"));
         assertEquals(new Integer(1), result.get("world"));
     }
@@ -51,7 +51,7 @@ public class WordsTest {
     @Test
     public void more_word_test() throws Exception {
         String[] strs = {"hello", "world", "Paul", "Paul"};
-        Map<String, Integer> result = printWordCount(strs);
+        Map<String, Integer> result = getWordCount(strs);
         assertEquals(new Integer(1), result.get("hello"));
         assertEquals(new Integer(1), result.get("world"));
         assertEquals(new Integer(2), result.get("Paul"));
@@ -73,7 +73,7 @@ public class WordsTest {
 
     @Test
     public void searchWordCountsTest() throws IOException {
-        printWordCount(readFileSplitByBlank(inputFile));
+        getWordCount(readFileSplitByBlank(inputFile));
     }
 
 }

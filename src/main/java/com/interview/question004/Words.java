@@ -4,14 +4,27 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Words {
 
-    public static Map<String,Integer> printWordCount(String[] words) {
+    public static TreeMap<String, Integer> getFrequentWord(String[] words){
+        final Map<String, Integer> wordCount = getWordCount(words);
+        TreeMap<String, Integer> result = new TreeMap<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if(wordCount.get(o1)>wordCount.get(o2)){
+                    return -1;
+                }else {
+                    return 1;
+                }
+            }
+        });
+        result.putAll(wordCount);
+        return result;
+    }
+
+    public static Map<String,Integer> getWordCount(String[] words) {
         Map<String,Integer> result = new HashMap<String,Integer>();
         for (String word : words) {
             if(result.get(word)!=null){
@@ -20,7 +33,6 @@ public class Words {
                 result.put(word,1);
             }
         }
-        System.out.println(result);
         return result;
     }
 
@@ -47,6 +59,6 @@ public class Words {
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
         String[] words = readFileSplitByBlank(new File(dir.getCanonicalFile() + File.separator + "words"));
-        printWordCount(words);
+        getWordCount(words);
     }
 }
