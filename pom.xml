@@ -5,7 +5,19 @@
   <groupId>co.interview</groupId>
   <artifactId>interview</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <packaging>jar</packaging>
 
   <name>interview</name>
   <url>http://maven.apache.org</url>
@@ -16,6 +28,7 @@
 
   <dependencies>
 
+    <!-- Jedis -->
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
@@ -28,6 +41,14 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- html parse : jsoup -->
+    <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>1.9.2</version>
+    </dependency>
+
 
   </dependencies>
 </project>
