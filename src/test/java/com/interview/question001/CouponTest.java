@@ -1,6 +1,5 @@
-package com.interview;
+package com.interview.question001;
 
-import com.interview.question001.Coupon;
 import org.junit.Test;
 
 import java.util.Set;

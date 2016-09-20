@@ -1,6 +1,5 @@
-package com.interview;
+package com.interview.question008;
 
-import com.interview.question008.HtmlParse;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;

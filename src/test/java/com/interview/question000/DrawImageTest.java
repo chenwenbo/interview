@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.question000;
 
 import com.interview.question000.DrawImage;
 import org.junit.Before;

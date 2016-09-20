@@ -1,4 +1,4 @@
-package com.interview.code;
+package com.interview.question007;
 
 import com.interview.question007.CodeCounter;
 import org.junit.Before;

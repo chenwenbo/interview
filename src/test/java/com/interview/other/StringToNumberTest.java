@@ -1,4 +1,4 @@
-package com.interview.str;
+package com.interview.other;
 
 
 import com.interview.other.StringToNumber;

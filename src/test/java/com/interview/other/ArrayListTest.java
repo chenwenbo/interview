@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.other;
 
 import com.interview.other.ArrayList;
 import org.junit.Before;

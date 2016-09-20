@@ -1,13 +1,12 @@
-package com.interview;
+package com.interview.question010;
 
-import com.interview.question010.RandomValidateCode;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Administrator on 2016/9/20.
+ * 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片
  */
 public class RandomValidateCodeTest {
 

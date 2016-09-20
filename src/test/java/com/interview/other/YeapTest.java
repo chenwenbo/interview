@@ -1,4 +1,4 @@
-package com.interview.yeap;
+package com.interview.other;
 
 import com.interview.other.Yeap;
 import org.junit.Test;

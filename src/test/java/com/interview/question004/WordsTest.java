@@ -1,4 +1,4 @@
-package com.interview.words;
+package com.interview.question004;
 
 import org.junit.Before;
 import org.junit.Test;
