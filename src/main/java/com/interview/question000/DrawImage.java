@@ -10,6 +10,7 @@ import java.io.IOException;
 /**
  * 第 0001 题：做为 Apple Store App 独立开发者，你要搞限时促销，为你的应用生成激活码（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？
  * 第 0005 题：你有一个目录，装了很多照片，把它们的尺寸变成都不大于 iPhone5 分辨率的大小。
+ * 参考链接:https://my.oschina.net/acitiviti/blog/370638
  */
 public class DrawImage {
 
