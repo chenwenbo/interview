@@ -1,6 +1,5 @@
 package com.interview.question000;
 
-import com.interview.question000.DrawImage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,25 +12,17 @@ import java.io.IOException;
 public class DrawImageTest {
 
     private String imagePrefix;
-    private DrawImage drawImage;
+    private DrawImage drawImage = new DrawImage();
 
     @Before
     public void before() throws IOException {
         imagePrefix = new File(".").getCanonicalFile() + File.separator + "image" + File.separator;
-        drawImage = new DrawImage();
     }
 
     @Test
     public void drawWordImageTest() throws IOException {
         drawImage.drawWordInImage(imagePrefix+"icon.jpg","2","jpg",imagePrefix+"icon_new.jpg");
         drawImage.drawWordInImage(imagePrefix+"icon1.jpg","2","jpg",imagePrefix+"icon1_new.jpg");
-    }
-
-    @Test
-    public void drawIphone5ImageTest() throws IOException {
-        drawImage.generateIphone5Image(imagePrefix+"icon.jpg","jpg",imagePrefix+"icon_iphone5.jpg");
-        drawImage.generateIphone5Image(imagePrefix+"icon1.jpg","jpg",imagePrefix+"icon1_iphone5.jpg");
-        drawImage.generateIphone5Image(imagePrefix+"icon2.jpg","jpg",imagePrefix+"icon2_iphone5.jpg");
     }
 
 }

@@ -1,4 +1,4 @@
-package com.interview.question008;
+package com.interview.question009;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,9 +7,9 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 /**
- *  html 解析 : 利用jsoup进行处理
+ * 第 0009 题：一个HTML文件，找出里面的链接。
  */
-public class HtmlParse {
+public class HtmlLinkParse {
 
     /**
      * find all link in html
@@ -20,16 +20,6 @@ public class HtmlParse {
     public static Elements getLink(String url) throws IOException {
         Document doc = Jsoup.connect(url).get();
         return doc.getElementsByTag("a");
-    }
-
-    /**
-     * find content in html
-     * @param url
-     * @return
-     */
-    public static String getContent(String url) throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        return doc.getAllElements().text();
     }
 
 }
