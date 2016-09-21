@@ -55,7 +55,7 @@ public class DiariesAnalyze {
 	}
 
 
-	private static List<File> getFile(File f) {
+	public static List<File> getFile(File f) {
 		File[] ff = f.listFiles();
 		for (File child : ff) {
 			if (child.isDirectory()) {

@@ -15,35 +15,35 @@ public class ReplaceFilterWord {
 
     public static final String RIGHT_ANSWER = "Human Rights";
     public static final String FILTER_CHAR = "*";
+    public static final String FILTERED_WORDS_FILE = "filtered_words";
 
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
-        List<String>  words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + "filtered_words"));
+        List<String>  words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + FILTERED_WORDS_FILE));
         Scanner scanner = new Scanner(System.in);
         while (true){
-            String inputWrod = scanner.nextLine();
-            if(!containFilterWord(words, inputWrod)){
-                System.out.println(RIGHT_ANSWER);
-            }
+            String result = getFilterWordResult(words, scanner.nextLine());
+            System.out.println(result);
         }
     }
 
-    private static boolean containFilterWord(List<String> words, String inputWrod) {
+    public static String getFilterWordResult(List<String> words, String inputWrod) {
+        boolean flag = false;
         for (String word : words) {
             if(inputWrod.contains(word)){
-                replaceFilterWord(inputWrod,word);
-                return true;
+                flag = true;
+                inputWrod = replaceFilterWord(inputWrod, word);
             }
         }
-        return false;
+        return flag ? inputWrod : RIGHT_ANSWER;
     }
 
-    private static void replaceFilterWord(String inputWord, String filterWord) {
+    private static String replaceFilterWord(String inputWord, String filterWord) {
         StringBuffer replaceWord = new StringBuffer();
         for (int i = 0; i < filterWord.length(); i++) {
             replaceWord.append(FILTER_CHAR);
         }
-        System.out.println(inputWord.replaceAll(filterWord, replaceWord.toString()));
+        return inputWord.replaceAll(filterWord, replaceWord.toString());
     }
 
 }

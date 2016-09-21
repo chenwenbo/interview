@@ -12,27 +12,26 @@ import static com.interview.question004.Words.readFileSplitByLine;
  */
 public class FilterWord {
 
+    public static final String FAIL_WORD = "Freedom";
+    public static final String PASS_WORD = "Human Rights";
+
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
         List<String>  words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + "filtered_words"));
         Scanner scanner = new Scanner(System.in);
         while (true){
-            String inputWrod = scanner.nextLine();
-            if(isContainsFilterWord(words,inputWrod)){
-                System.out.println("Freedom");
-            }else {
-                System.out.println("Human Rights");
-            }
+            String result = getFilterWordResult(words, scanner.nextLine());
+            System.out.println(result);
         }
     }
 
-    private static boolean isContainsFilterWord(List<String> words, String inputWrod) {
+    public static String getFilterWordResult(List<String> words, String inputWrod) {
         for (String word : words) {
             if(inputWrod.contains(word)){
-                return true;
+                return FAIL_WORD;
             }
         }
-        return false;
+        return PASS_WORD;
     }
 
 }
