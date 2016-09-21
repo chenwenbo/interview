@@ -36,14 +36,18 @@ public class Words {
         return result;
     }
 
-    public static String[] readFileSplitByBlank(File file) throws IOException {
+    public static String readFile(File file) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         StringBuffer sbf = new StringBuffer();
         String line = null;
         while ((line = bufferedReader.readLine())!=null){
             sbf.append(line);
         }
-        return sbf.toString().split(" ");
+        return sbf.toString();
+    }
+
+    public static String[] readFileSplitByBlank(File file) throws IOException {
+        return readFile(file).split(" ");
     }
 
     public static List<String> readFileSplitByLine(File file) throws IOException {
