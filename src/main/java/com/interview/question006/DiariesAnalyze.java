@@ -12,19 +12,11 @@ import static com.interview.question004.Words.readFileSplitByBlank;
  */
 public class DiariesAnalyze {
 
-	private static List<File> fileArray = new ArrayList<>();
+	private List<File> fileArray = new ArrayList<>();
 
 	public static final String DIARIES_RESOURCE = "diaries";
 
-	public static void main(String[] args) throws IOException {
-		String path = new File(".").getCanonicalPath() + File.separator + DIARIES_RESOURCE;
-		List<File> files = getFile(new File(path));
-		printAllFilesFrequentWord(files);
-		printEveryFileFrequentWord(files);
-
-	}
-
-	public static void printEveryFileFrequentWord(List<File> files) throws IOException {
+	public void printEveryFileFrequentWord(List<File> files) throws IOException {
 		for (File file : files) {
 			TreeMap<String, Integer> result = getFrequentWord(readFileSplitByBlank(file));
 			Map.Entry<String, Integer> firstEntry = result.firstEntry();
@@ -32,7 +24,7 @@ public class DiariesAnalyze {
 		}
 	}
 
-	public static void printAllFilesFrequentWord(List<File> files) throws IOException {
+	public void printAllFilesFrequentWord(List<File> files) throws IOException {
 		String[] allTexts = {};
 		for (File file : files) {
 			String[] text = readFileSplitByBlank(file);
@@ -43,7 +35,7 @@ public class DiariesAnalyze {
 		System.out.println("all files" + "--" + firstEntry.getKey() + ":" + firstEntry.getValue());
 	}
 
-	private static String[] addArray(String[] allTexts, String[] text) {
+	private String[] addArray(String[] allTexts, String[] text) {
 		int desLength = allTexts.length;
 
 		String [] tempArr = allTexts;
@@ -55,7 +47,7 @@ public class DiariesAnalyze {
 	}
 
 
-	public static List<File> getFile(File f) {
+	public List<File> getFile(File f) {
 		File[] ff = f.listFiles();
 		for (File child : ff) {
 			if (child.isDirectory()) {
