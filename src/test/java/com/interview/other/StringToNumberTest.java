@@ -1,16 +1,16 @@
 package com.interview.other;
 
 
-import com.interview.other.StringToNumber;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+
 /**
- *  interview program test case
- *  description : convert string to number
- *  eg : "1" --> 1 , "2" --> 2
- *       "11" --> 11 , "22" --> 22
- *       "111" --> 111 , "222" --> 222
+ * interview program test case
+ * description : convert string to number
+ * eg : "1" --> 1 , "2" --> 2
+ * "11" --> 11 , "22" --> 22
+ * "111" --> 111 , "222" --> 222
  */
 public class StringToNumberTest {
 

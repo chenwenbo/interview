@@ -21,9 +21,9 @@ public class ImageSizeProcessTest {
 
     @Test
     public void drawIphone5ImageTest() throws IOException {
-        imageSizeProcess.generateIphone5Image(imagePrefix+"icon.jpg","jpg",imagePrefix+"icon_iphone5.jpg");
-        imageSizeProcess.generateIphone5Image(imagePrefix+"icon1.jpg","jpg",imagePrefix+"icon1_iphone5.jpg");
-        imageSizeProcess.generateIphone5Image(imagePrefix+"icon2.jpg","jpg",imagePrefix+"icon2_iphone5.jpg");
+        imageSizeProcess.generateIphone5Image(imagePrefix + "icon.jpg", "jpg", imagePrefix + "icon_iphone5.jpg");
+        imageSizeProcess.generateIphone5Image(imagePrefix + "icon1.jpg", "jpg", imagePrefix + "icon1_iphone5.jpg");
+        imageSizeProcess.generateIphone5Image(imagePrefix + "icon2.jpg", "jpg", imagePrefix + "icon2_iphone5.jpg");
     }
 
 }

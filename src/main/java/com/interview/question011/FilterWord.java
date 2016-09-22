@@ -17,9 +17,9 @@ public class FilterWord {
 
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
-        List<String>  words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + "filtered_words"));
+        List<String> words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + "filtered_words"));
         Scanner scanner = new Scanner(System.in);
-        while (true){
+        while (true) {
             String result = getFilterWordResult(words, scanner.nextLine());
             System.out.println(result);
         }
@@ -27,7 +27,7 @@ public class FilterWord {
 
     public static String getFilterWordResult(List<String> words, String inputWrod) {
         for (String word : words) {
-            if(inputWrod.contains(word)){
+            if (inputWrod.contains(word)) {
                 return FAIL_WORD;
             }
         }

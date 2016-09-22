@@ -15,10 +15,10 @@ public class JedisRespo {
         throw new RuntimeException();
     }
 
-    public static Jedis getJedisInstance(){
+    public static Jedis getJedisInstance() {
         if (jedis != null) {
             return jedis;
-        }else {
+        } else {
             JedisPool pool = new JedisPool(new JedisPoolConfig(), "120.25.251.32");
             jedis = pool.getResource();
             jedis.auth("redis123");

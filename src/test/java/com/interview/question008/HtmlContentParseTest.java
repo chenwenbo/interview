@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 /**
-  *第 0008 题：一个HTML文件，找出里面的正文。
+ * 第 0008 题：一个HTML文件，找出里面的正文。
  */
 public class HtmlContentParseTest {
 

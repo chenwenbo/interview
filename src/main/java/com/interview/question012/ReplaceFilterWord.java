@@ -19,9 +19,9 @@ public class ReplaceFilterWord {
 
     public static void main(String[] args) throws IOException {
         File dir = new File(".");
-        List<String>  words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + FILTERED_WORDS_FILE));
+        List<String> words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + FILTERED_WORDS_FILE));
         Scanner scanner = new Scanner(System.in);
-        while (true){
+        while (true) {
             String result = getFilterWordResult(words, scanner.nextLine());
             System.out.println(result);
         }
@@ -30,7 +30,7 @@ public class ReplaceFilterWord {
     public static String getFilterWordResult(List<String> words, String inputWrod) {
         boolean flag = false;
         for (String word : words) {
-            if(inputWrod.contains(word)){
+            if (inputWrod.contains(word)) {
                 flag = true;
                 inputWrod = replaceFilterWord(inputWrod, word);
             }

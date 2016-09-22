@@ -13,8 +13,8 @@ public class HtmlLinkParse {
 
     /**
      * find all link in html
-     * @param url
-     * other method: Elements links = doc.select("a[href]");
+     *
+     * @param url other method: Elements links = doc.select("a[href]");
      * @return
      */
     public static Elements getLink(String url) throws IOException {

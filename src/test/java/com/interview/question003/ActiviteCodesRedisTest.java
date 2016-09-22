@@ -21,16 +21,16 @@ public class ActiviteCodesRedisTest {
     private Set<String> activiteCodes;
 
     @Before
-    public void before(){
+    public void before() {
         activiteCodes = this.activiteCode.getActiviteCode(200, 15);
     }
 
     @Test
-    public void saveCouponsTest(){
+    public void saveCouponsTest() {
         //given
         activiteCodeRedis.clearActiviteCodes(ACTIVITE_NAME);
         //when
-        activiteCodeRedis.saveActiviteCode(ACTIVITE_NAME,activiteCodes);
+        activiteCodeRedis.saveActiviteCode(ACTIVITE_NAME, activiteCodes);
         //then
         List<String> activiteCodes = activiteCodeRedis.queryActivitesCode(ACTIVITE_NAME);
         assertEquals(200, activiteCodes.size());

@@ -18,12 +18,12 @@ public class ActiviteCodesTest {
     private Set<String> activiteCodes;
 
     @Before
-    public void before(){
+    public void before() {
         activiteCodes = this.activiteCode.getActiviteCode(200, 15);
     }
 
     @Test
-    public void generateCouponCodeTest(){
+    public void generateCouponCodeTest() {
         for (String code : activiteCodes) {
             System.out.println(code);
         }

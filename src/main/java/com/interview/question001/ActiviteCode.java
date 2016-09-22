@@ -11,7 +11,7 @@ public class ActiviteCode {
 
     private static final String ALL_CHARS = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public Set<String> getActiviteCode(int count, int length){
+    public Set<String> getActiviteCode(int count, int length) {
         Set<String> activiteCodes = new HashSet<String>();
         while (activiteCodes.size() < count) {
             activiteCodes.add(generateKey(length));

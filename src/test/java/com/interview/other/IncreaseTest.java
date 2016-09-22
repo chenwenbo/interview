@@ -9,13 +9,13 @@ public class IncreaseTest {
     private int i = 1;
 
     @Test
-    public void plus_plus_i_should_be_i(){
-        assertEquals(2,++i);
+    public void plus_plus_i_should_be_i() {
+        assertEquals(2, ++i);
     }
 
     @Test
-    public void i_plus_plus_should_be_i(){
-        assertEquals(1,i++);
+    public void i_plus_plus_should_be_i() {
+        assertEquals(1, i++);
     }
 
 }

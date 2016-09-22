@@ -11,7 +11,7 @@ public class StringToNumber {
 
         int result = 0;
         for (int i = 0; i < str.length(); i++) {
-           result = result * 10 + str.charAt(i)-ZERO_CHAR;
+            result = result * 10 + str.charAt(i) - ZERO_CHAR;
         }
         return result;
     }

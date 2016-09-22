@@ -21,8 +21,8 @@ public class DrawImageTest {
 
     @Test
     public void drawWordImageTest() throws IOException {
-        drawImage.drawWordInImage(imagePrefix+"icon.jpg","2","jpg",imagePrefix+"icon_new.jpg");
-        drawImage.drawWordInImage(imagePrefix+"icon1.jpg","2","jpg",imagePrefix+"icon1_new.jpg");
+        drawImage.drawWordInImage(imagePrefix + "icon.jpg", "2", "jpg", imagePrefix + "icon_new.jpg");
+        drawImage.drawWordInImage(imagePrefix + "icon1.jpg", "2", "jpg", imagePrefix + "icon1_new.jpg");
     }
 
 }

@@ -13,15 +13,19 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
+import static com.interview.utils.ExcelUtils.setCellValue;
+
 
 /**
- * 第 0014 题： 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示：
+ * 第 0015 题： 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：
  */
 public class CityJson2Xls {
 
     public static final String STUDENT_TXT = "city.txt";
-    public static final String STUDENT_XLS = "city.xls";
+    public static final String STUDENT_XLS = "city.xlsx";
     public static final String JSON_DIR = "json";
+    public static final String CITY = "city";
+    public static final String SHEET_NAME = CITY;
 
     public static void main(String[] args) throws IOException {
         convertJson2Xls();
@@ -35,13 +39,16 @@ public class CityJson2Xls {
         JSONObject jsonObject = new JSONObject(json);
 
         String xlsFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_XLS;
-        write2Excel(jsonObject.toMap(), new FileOutputStream(xlsFilePath));
+        try (FileOutputStream os = new FileOutputStream(xlsFilePath)) {
+            write2Excel(jsonObject.toMap(), os);
+        }
     }
 
     private static void write2Excel(Map<String, Object> students, OutputStream os) throws IOException {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("city");
+        XSSFSheet sheet = workbook.createSheet(SHEET_NAME);
+
         int i = students.size();
         for (Map.Entry<String, Object> studentEntry : students.entrySet()) {
             Row row = sheet.createRow(--i);
@@ -49,24 +56,9 @@ public class CityJson2Xls {
             Cell cell = row.createCell(1);
             setCellValue(cell, studentEntry.getValue());
         }
+
         workbook.write(os);
         os.close();
-    }
-
-    private static void setCellValue(Cell cell, Object obj) {
-        if (obj == null){
-            cell.setCellValue("");
-        } else if (obj instanceof String) {
-            cell.setCellValue((String) obj);
-        } else if (obj instanceof Integer) {
-            cell.setCellValue((Integer) obj);
-        } else if (obj instanceof Long) {
-            cell.setCellValue((Long) obj);
-        } else if (obj instanceof Double) {
-            cell.setCellValue((Double) obj);
-        } else if (obj instanceof Float) {
-            cell.setCellValue((Float) obj);
-        }
     }
 
 }

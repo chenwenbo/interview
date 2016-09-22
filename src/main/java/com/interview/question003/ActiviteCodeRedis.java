@@ -13,7 +13,7 @@ public class ActiviteCodeRedis {
 
     private static Jedis jedis = JedisRespo.getJedisInstance();
 
-    public void saveActiviteCode(String activiteName , Set<String> activiteCodes){
+    public void saveActiviteCode(String activiteName, Set<String> activiteCodes) {
         for (String activiteCode : activiteCodes) {
             jedis.rpush(activiteName, activiteCode);
         }
@@ -23,7 +23,7 @@ public class ActiviteCodeRedis {
         return jedis.lrange(activiteName, 0, -1);
     }
 
-    public void clearActiviteCodes(String activiteName){
+    public void clearActiviteCodes(String activiteName) {
         jedis.del(activiteName);
     }
 
