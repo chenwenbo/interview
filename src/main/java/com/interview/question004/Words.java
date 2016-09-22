@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+import static com.interview.other.Contans.INPUT_PATH;
+
 public class Words {
 
     public static TreeMap<String, Integer> getFrequentWord(String[] words) {
@@ -61,8 +63,7 @@ public class Words {
     }
 
     public static void main(String[] args) throws IOException {
-        File dir = new File(".");
-        String[] words = readFileSplitByBlank(new File(dir.getCanonicalFile() + File.separator + "words"));
+        String[] words = readFileSplitByBlank(new File(INPUT_PATH + File.separator + "words.txt"));
         getWordCount(words);
     }
 }

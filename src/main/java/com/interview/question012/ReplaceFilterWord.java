@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.interview.other.Contans.OUTPUT_PATH;
+import static com.interview.other.Contans.INPUT_PATH;
 import static com.interview.question004.Words.readFileSplitByLine;
 
 /**
@@ -16,11 +16,10 @@ public class ReplaceFilterWord {
 
     public static final String RIGHT_ANSWER = "Human Rights";
     public static final String FILTER_CHAR = "*";
-    public static final String FILTERED_WORDS_FILE = "filtered_words";
+    public static final String FILTERED_WORDS_FILE = "filtered_words.txt";
 
     public static void main(String[] args) throws IOException {
-        File dir = new File(".");
-        List<String> words = readFileSplitByLine(new File(dir.getCanonicalFile() + File.separator + OUTPUT_PATH + File.separator + FILTERED_WORDS_FILE));
+        List<String> words = readFileSplitByLine(new File(INPUT_PATH + File.separator +FILTERED_WORDS_FILE));
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String result = getFilterWordResult(words, scanner.nextLine());

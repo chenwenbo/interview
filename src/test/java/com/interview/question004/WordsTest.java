@@ -1,15 +1,13 @@
 package com.interview.question004;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.interview.question004.Words.getWordCount;
-import static com.interview.question004.Words.readFileSplitByBlank;
-import static com.interview.question004.Words.readFileSplitByLine;
+import static com.interview.other.Contans.INPUT_PATH;
+import static com.interview.question004.Words.*;
 import static org.junit.Assert.assertEquals;
 
 
@@ -18,13 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class WordsTest {
 
-    private File inputFile;
-
-    @Before
-    public void before() throws IOException {
-        File dir = new File(".");
-        inputFile = new File(dir.getCanonicalFile() + File.separator + "words");
-    }
+    private File inputFile = new File(INPUT_PATH + File.separator + "words");
 
     @Test
     public void one_word_test() throws Exception {
