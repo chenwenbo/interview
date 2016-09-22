@@ -11,16 +11,16 @@ public class ArrayList {
         this.elementData = EMPTY_ELEMENTDATA;
     }
 
-    public void add(Object o){
-        ensureCapital(size+1);
-        elementData[size++]=o;
+    public void add(Object o) {
+        ensureCapital(size + 1);
+        elementData[size++] = o;
     }
 
     private void ensureCapital(int minCapacity) {
-        if(elementData==EMPTY_ELEMENTDATA){
+        if (elementData == EMPTY_ELEMENTDATA) {
             minCapacity = 10;
         }
-        if(minCapacity>elementData.length){
+        if (minCapacity > elementData.length) {
             grows(minCapacity);
         }
     }
@@ -32,21 +32,21 @@ public class ArrayList {
         if (newCapacity - minCapacity < 0) {
             newCapacity = minCapacity;
         }
-        if (newCapacity - MAX_ARRAY_SIZE > 0){
+        if (newCapacity - MAX_ARRAY_SIZE > 0) {
             newCapacity = Integer.MAX_VALUE;
         }
-        if(newCapacity>elementData.length){
+        if (newCapacity > elementData.length) {
             String[] newElements = new String[newCapacity];
             System.arraycopy(elementData, 0, newElements, 0, elementData.length);
             elementData = newElements;
         }
     }
 
-    public Object get(int num){
+    public Object get(int num) {
         return elementData[num];
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 

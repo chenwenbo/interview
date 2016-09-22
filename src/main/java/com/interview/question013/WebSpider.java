@@ -5,10 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -20,9 +17,9 @@ public class WebSpider {
     public void fetchImage(String url) throws IOException {
         Elements images = getImage(url);
         File dir = new File(".");
-        String filePath =  dir.getCanonicalPath() + File.separator + "girl";
+        String filePath = dir.getCanonicalPath() + File.separator + "girl";
         for (Element image : images) {
-            downImgs(image.attr("src"),filePath);
+            downImgs(image.attr("src"), filePath);
         }
     }
 
@@ -32,47 +29,29 @@ public class WebSpider {
     }
 
     /**
-     *  下载文件夹到本地
-     * @param imgsrc 图片地址
-     * @param filePath 存储图片地址
+     * 下载文件夹到本地
      *
-     * */
-    public void downImgs(String imgsrc,String filePath) throws IOException {
-        //获取图片
-        InputStream is = null;
-        FileOutputStream fos = null;
-        try {
-            //创建目录
-            File files = new File(filePath);
-            if(!files.exists()){
-                files.mkdirs();
-            }
-            URL url = new URL(imgsrc);
-            //连接网络图片地址
-            HttpURLConnection uc=(HttpURLConnection) url.openConnection();
-            //获取连接的输入流
-            is=uc.getInputStream();
-
-            //创建文件
-            File file=new File(filePath+imgsrc.substring(imgsrc.lastIndexOf("/")));
-            //输入到本地
-            fos=new FileOutputStream(file);
-            int line=-1;
-            while((line=is.read())!=-1){
-                fos.write(line);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            if(null!=is){
-                is.close();
-            }
-            if(null!=fos){
-                fos.close();
-            }
+     * @param imgsrc   图片地址
+     * @param filePath 存储图片地址
+     */
+    public void downImgs(String imgsrc, String filePath) throws IOException {
+        File files = new File(filePath);
+        if (!files.exists()) {
+            files.mkdirs();
         }
 
+        URL url = new URL(imgsrc);
+        HttpURLConnection uc = (HttpURLConnection) url.openConnection();
+        File file = new File(filePath + imgsrc.substring(imgsrc.lastIndexOf("/")));
+        try (
+                InputStream is = uc.getInputStream();
+                OutputStream fos = new FileOutputStream(file);
+        ) {
+            int line = -1;
+            while ((line = is.read()) != -1) {
+                fos.write(line);
+            }
+        }
     }
 
 }

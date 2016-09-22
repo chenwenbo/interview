@@ -14,7 +14,7 @@ public class RandomValidateCodeTest {
 
     @Test
     public void generateValidateCodeTest() throws IOException {
-        String validateCodeImage = new File(".").getCanonicalFile() + File.separator + "image" + File.separator+"validateCode.jpeg";
+        String validateCodeImage = new File(".").getCanonicalFile() + File.separator + "image" + File.separator + "validateCode.jpeg";
         randomValidateCode.getRandcode(validateCodeImage);
     }
 }

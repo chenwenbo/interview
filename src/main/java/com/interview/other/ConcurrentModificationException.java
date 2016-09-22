@@ -16,7 +16,7 @@ public class ConcurrentModificationException {
 
     private static void iterator(List<String> strs) {
         Iterator<String> iterator = strs.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             String str = iterator.next();
             if ("B".equals(str)) {
                 iterator.remove();

@@ -67,8 +67,8 @@ public class RandomValidateCode {
             ImageIO.write(image, "JPEG", fos);// 将内存中的图片通过流动形式输出到客户端
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(fos!=null){
+        } finally {
+            if (fos != null) {
                 fos.close();
             }
         }

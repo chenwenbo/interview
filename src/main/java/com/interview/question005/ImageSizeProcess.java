@@ -19,38 +19,39 @@ public class ImageSizeProcess {
 
     /**
      * 生成iphone5的尺寸
+     *
      * @param srcImagePath
      * @param formatName
      * @param targetPath
      * @throws IOException
      */
     public void generateIphone5Image(String srcImagePath, String formatName, String targetPath) throws IOException {
-        FileOutputStream fos=null;
+        FileOutputStream fos = null;
         try {
             BufferedImage image = ImageIO.read(new File(srcImagePath));
-            fos=new FileOutputStream(targetPath);
+            fos = new FileOutputStream(targetPath);
             ImageIO.write(drawImage(image), formatName, fos);
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-            if(fos!=null){
+        } finally {
+            if (fos != null) {
                 fos.close();
             }
         }
     }
 
     private BufferedImage drawImage(BufferedImage image) {
-        int widthRate = image.getWidth()/ ImageSizeProcess.IPHONE5_WIDTH;
-        int heightRate = image.getHeight()/ ImageSizeProcess.IPHONE5_HEIGHT;
+        int widthRate = image.getWidth() / ImageSizeProcess.IPHONE5_WIDTH;
+        int heightRate = image.getHeight() / ImageSizeProcess.IPHONE5_HEIGHT;
         //判断分辨率是否满足
-        if(widthRate>1 || heightRate >1){
+        if (widthRate > 1 || heightRate > 1) {
             int rate = widthRate > heightRate ? widthRate : heightRate;
-            BufferedImage img = new BufferedImage(image.getWidth()/rate, image.getHeight()/rate, BufferedImage.TYPE_INT_RGB);
+            BufferedImage img = new BufferedImage(image.getWidth() / rate, image.getHeight() / rate, BufferedImage.TYPE_INT_RGB);
             //创建java2D对象
             Graphics2D g2d = (Graphics2D) img.getGraphics();
             //用源图像填充背景
-            g2d.drawImage(image, 0, 0, image.getWidth()/rate, image.getHeight()/rate, null);
+            g2d.drawImage(image, 0, 0, image.getWidth() / rate, image.getHeight() / rate, null);
             g2d.dispose();
             return img;
         }
