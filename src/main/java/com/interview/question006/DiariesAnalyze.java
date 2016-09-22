@@ -14,7 +14,6 @@ public class DiariesAnalyze {
 
     private List<File> fileArray = new ArrayList<>();
 
-    public static final String DIARIES_RESOURCE = "diaries";
 
     public void printEveryFileFrequentWord(List<File> files) throws IOException {
         for (File file : files) {

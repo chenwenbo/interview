@@ -15,6 +15,10 @@ import java.util.Iterator;
  */
 public class ReadXls {
     public static void main(String[] args) throws IOException {
+        readXls();
+    }
+
+    private static void readXls() throws IOException {
         try (
                 FileInputStream inputStream = new FileInputStream(new File("json\\city.xlsx"))
         ) {
@@ -38,8 +42,6 @@ public class ReadXls {
                 }
             }
         }
-
-
     }
 }
 

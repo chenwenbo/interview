@@ -14,6 +14,8 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
+import static com.interview.other.Contans.INPUT_JSON_PATH;
+import static com.interview.other.Contans.OUTPUT_XLS_PATH;
 import static com.interview.utils.ExcelUtils.setCellValue;
 
 
@@ -24,22 +26,14 @@ public class StudentJson2Xls {
 
     public static final String STUDENT_TXT = "student.txt";
     public static final String STUDENT_XLS = "student.xlsx";
-    public static final String JSON_DIR = "json";
     public static final String SHEET_NAME = "student";
 
-    public static void main(String[] args) throws IOException {
-        convertJson2Xls();
-    }
-
     public static void convertJson2Xls() throws IOException {
-        File dir = new File(".");
 
-        String txtFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_TXT;
-        String json = Words.readFile(new File(txtFilePath));
+        String json = Words.readFile(new File(INPUT_JSON_PATH + STUDENT_TXT));
         JSONObject jsonObject = new JSONObject(json);
 
-        String xlsFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_XLS;
-        try (FileOutputStream os = new FileOutputStream(xlsFilePath)) {
+        try (FileOutputStream os = new FileOutputStream(OUTPUT_XLS_PATH + STUDENT_XLS)) {
             write2Excel(jsonObject.toMap(), os);
         }
     }

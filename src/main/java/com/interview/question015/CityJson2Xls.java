@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
+import static com.interview.other.Contans.*;
 import static com.interview.utils.ExcelUtils.setCellValue;
 
 
@@ -21,25 +22,16 @@ import static com.interview.utils.ExcelUtils.setCellValue;
  */
 public class CityJson2Xls {
 
-    public static final String STUDENT_TXT = "city.txt";
-    public static final String STUDENT_XLS = "city.xlsx";
-    public static final String JSON_DIR = "json";
-    public static final String CITY = "city";
-    public static final String SHEET_NAME = CITY;
-
-    public static void main(String[] args) throws IOException {
-        convertJson2Xls();
-    }
+    public static final String CITY_TXT = "city.txt";
+    public static final String CITY_XLS = "city.xlsx";
+    public static final String SHEET_NAME = "city";
 
     public static void convertJson2Xls() throws IOException {
-        File dir = new File(".");
 
-        String txtFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_TXT;
-        String json = Words.readFile(new File(txtFilePath));
+        String json = Words.readFile(new File(INPUT_JSON_PATH + CITY_TXT));
         JSONObject jsonObject = new JSONObject(json);
 
-        String xlsFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_XLS;
-        try (FileOutputStream os = new FileOutputStream(xlsFilePath)) {
+        try (FileOutputStream os = new FileOutputStream(OUTPUT_XML_PATH + CITY_XLS)) {
             write2Excel(jsonObject.toMap(), os);
         }
     }

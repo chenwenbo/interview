@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 
+import static com.interview.other.Contans.*;
 import static com.interview.utils.ExcelUtils.setCellValue;
 
 
@@ -21,24 +22,15 @@ import static com.interview.utils.ExcelUtils.setCellValue;
  */
 public class NumberJson2Xls {
 
-    public static final String STUDENT_TXT = "numbers.txt";
-    public static final String STUDENT_XLS = "numbers.xlsx";
-    public static final String JSON_DIR = "json";
+    public static final String NUMBER_TXT = "numbers.txt";
+    public static final String NUMBER_XLS = "numbers.xlsx";
     public static final String SHEET_NAME = "numbers";
 
-    public static void main(String[] args) throws IOException {
-        convertJson2Xls();
-    }
-
     public static void convertJson2Xls() throws IOException {
-        File dir = new File(".");
-
-        String txtFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_TXT;
-        String json = Words.readFile(new File(txtFilePath));
+        String json = Words.readFile(new File(INPUT_JSON_PATH + NUMBER_TXT));
         JSONArray jsonArray = new JSONArray(json);
 
-        String xlsFilePath = dir.getCanonicalPath() + File.separator + JSON_DIR + File.separator + STUDENT_XLS;
-        try (OutputStream os = new FileOutputStream(xlsFilePath)) {
+        try (OutputStream os = new FileOutputStream(OUTPUT_XLS_PATH + NUMBER_XLS)) {
             write2Excel(jsonArray.toList(), os);
         }
 

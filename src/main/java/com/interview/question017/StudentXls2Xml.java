@@ -29,25 +29,25 @@ public class StudentXls2Xml {
     public static final String COMMENT = "学生信息表\n" +
             "    \"id\" : [名字, 数学, 语文, 英文]";
 
-    public static final String STUDENTS_XML = "xml\\student.xml";
-    public static final String JSON_CITY_XLSX = "json\\student.xlsx";
+    public static final String STUDENTS_XML = "output\\xml\\student.xml";
+    public static final String JSON_CITY_XLSX = "input\\json\\student.xlsx";
 
     public static void main(String[] args) throws IOException {
-        writeXml(JSON_CITY_XLSX,STUDENTS_XML);
+        writeXml(JSON_CITY_XLSX, STUDENTS_XML);
     }
 
-    public static void writeXml(String xlsPath,String xmlPath) throws IOException {
-        Element root=new Element("root");
-        Document doc=new Document();
+    public static void writeXml(String xlsPath, String xmlPath) throws IOException {
+        Element root = new Element("root");
+        Document doc = new Document();
 
-        Element students=new Element("students");
+        Element students = new Element("students");
         students.addContent(new Comment(COMMENT));
         students.addContent(getStudents(xlsPath));
 
         root.addContent(students);
         doc.setRootElement(root);
 
-        XMLOutputter outter=new XMLOutputter();
+        XMLOutputter outter = new XMLOutputter();
         outter.setFormat(Format.getPrettyFormat());
         outter.output(doc, new FileWriter(new File(xmlPath)));
     }
@@ -112,7 +112,7 @@ public class StudentXls2Xml {
         return cellValue;
     }
 
-    public static boolean isInteger(String str) {
-        return str.indexOf(".")==-1;
+    private static boolean isInteger(String str) {
+        return str.indexOf(".") == -1;
     }
 }

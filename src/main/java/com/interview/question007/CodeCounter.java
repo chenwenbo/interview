@@ -11,8 +11,6 @@ import java.util.ArrayList;
  */
 public class CodeCounter {
 
-    public static final String CODE_RESOURCE = "src";
-
     private long files = 0;  // 文件数
     private long codeLines = 0; //代码行数
     private long commentLines = 0; //注释行数
