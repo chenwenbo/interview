@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class WordsTest {
 
-    private File inputFile = new File(INPUT_PATH + File.separator + "words");
+    private File inputFile = new File(INPUT_PATH + File.separator + "words.txt");
 
     @Test
     public void one_word_test() throws Exception {

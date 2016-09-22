@@ -31,7 +31,7 @@ public class CityJson2Xls {
         String json = Words.readFile(new File(INPUT_JSON_PATH + CITY_TXT));
         JSONObject jsonObject = new JSONObject(json);
 
-        try (FileOutputStream os = new FileOutputStream(OUTPUT_XML_PATH + CITY_XLS)) {
+        try (FileOutputStream os = new FileOutputStream(OUTPUT_XLS_PATH + CITY_XLS)) {
             write2Excel(jsonObject.toMap(), os);
         }
     }

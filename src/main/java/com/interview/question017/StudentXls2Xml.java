@@ -29,12 +29,8 @@ public class StudentXls2Xml {
     public static final String COMMENT = "学生信息表\n" +
             "    \"id\" : [名字, 数学, 语文, 英文]";
 
-    public static final String STUDENTS_XML = "output\\xml\\student.xml";
-    public static final String JSON_CITY_XLSX = "input\\json\\student.xlsx";
-
-    public static void main(String[] args) throws IOException {
-        writeXml(JSON_CITY_XLSX, STUDENTS_XML);
-    }
+    public static final String STUDENTS_XML = "student.xml";
+    public static final String JSON_STUDENT_XLSX = "student.xlsx";
 
     public static void writeXml(String xlsPath, String xmlPath) throws IOException {
         Element root = new Element("root");

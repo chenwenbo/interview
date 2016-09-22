@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.interview.other.Contans.OUTPUT_PATH;
+import static com.interview.other.Contans.OUTPUT_GIRL_PATH;
 
 /**
  * 第 0013 题： 用 Python 写一个爬图片的程序，爬 这个链接里的日本妹子图片 :-)
@@ -19,10 +19,8 @@ public class WebSpider {
 
     public void fetchImage(String url) throws IOException {
         Elements images = getImage(url);
-        File dir = new File(".");
-        String filePath = dir.getCanonicalPath() + File.separator + OUTPUT_PATH + File.separator + "girl";
         for (Element image : images) {
-            downImgs(image.attr("src"), filePath);
+            downImgs(image.attr("src"), OUTPUT_GIRL_PATH);
         }
     }
 
