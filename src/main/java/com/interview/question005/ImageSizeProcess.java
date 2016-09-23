@@ -14,23 +14,21 @@ import java.io.IOException;
  */
 public class ImageSizeProcess {
 
-    private static final int IPHONE5_WIDTH = 640;
-    private static final int IPHONE5_HEIGHT = 1136;
-
     /**
      * 生成iphone5的尺寸
      *
      * @param srcImagePath
      * @param formatName
      * @param targetPath
+     * @param iphoneSize
      * @throws IOException
      */
-    public void generateIphone5Image(String srcImagePath, String formatName, String targetPath) throws IOException {
+    public void generateIphoneSizeImage(String srcImagePath, String formatName, String targetPath, IphoneSizeEnum iphoneSize) throws IOException {
         FileOutputStream fos = null;
         try {
             BufferedImage image = ImageIO.read(new File(srcImagePath));
             fos = new FileOutputStream(targetPath);
-            ImageIO.write(drawImage(image), formatName, fos);
+            ImageIO.write(drawImage(image, iphoneSize), formatName, fos);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,9 +39,9 @@ public class ImageSizeProcess {
         }
     }
 
-    private BufferedImage drawImage(BufferedImage image) {
-        int widthRate = image.getWidth() / ImageSizeProcess.IPHONE5_WIDTH;
-        int heightRate = image.getHeight() / ImageSizeProcess.IPHONE5_HEIGHT;
+    private BufferedImage drawImage(BufferedImage image, IphoneSizeEnum iphone5) {
+        int widthRate = image.getWidth() / iphone5.getWidth();
+        int heightRate = image.getHeight() / iphone5.getHeight();
         //判断分辨率是否满足
         if (widthRate > 1 || heightRate > 1) {
             int rate = widthRate > heightRate ? widthRate : heightRate;
