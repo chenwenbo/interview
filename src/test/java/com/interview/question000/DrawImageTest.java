@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.INPUT_IMAGE_PATH;
-import static com.interview.other.Contans.OUTPUT_IMAGE_PATH;
+import static com.interview.other.Contants.INPUT_IMAGE_PATH;
+import static com.interview.other.Contants.OUTPUT_IMAGE_PATH;
 
 /**
  * 将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。

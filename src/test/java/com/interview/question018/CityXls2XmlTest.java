@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.INPUT_XLS_PATH;
-import static com.interview.other.Contans.OUTPUT_XML_PATH;
+import static com.interview.other.Contants.INPUT_XLS_PATH;
+import static com.interview.other.Contants.OUTPUT_XML_PATH;
 
 /**
  * 第 0018 题： 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中，如下所示：

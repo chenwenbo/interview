@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.interview.other.Contans.OUTPUT_GIRL_PATH;
+import static com.interview.other.Contants.OUTPUT_GIRL_PATH;
 
 /**
  * 第 0013 题： 用 Python 写一个爬图片的程序，爬 这个链接里的日本妹子图片 :-)

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
-import static com.interview.other.Contans.*;
+import static com.interview.other.Contants.*;
 import static com.interview.utils.ExcelUtils.setCellValue;
 
 

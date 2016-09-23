@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.interview.other.Contans.INPUT_XLS_PATH;
+import static com.interview.other.Contants.INPUT_XLS_PATH;
 import static com.interview.utils.ExcelUtils.getCellValue;
 
 /**

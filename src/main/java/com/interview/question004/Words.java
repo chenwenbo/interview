@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-import static com.interview.other.Contans.INPUT_PATH;
+import static com.interview.other.Contants.INPUT_PATH;
 
 public class Words {
 

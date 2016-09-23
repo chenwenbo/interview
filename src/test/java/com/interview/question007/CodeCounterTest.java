@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.CODE_RESOURCE_PATH;
+import static com.interview.other.Contants.CODE_RESOURCE_PATH;
 
 /**
  * Created by Administrator on 2016/9/19.

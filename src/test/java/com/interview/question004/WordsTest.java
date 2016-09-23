@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.interview.other.Contans.INPUT_PATH;
+import static com.interview.other.Contants.INPUT_PATH;
 import static com.interview.question004.Words.*;
 import static org.junit.Assert.assertEquals;
 

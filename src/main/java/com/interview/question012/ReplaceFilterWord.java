@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.interview.other.Contans.INPUT_PATH;
+import static com.interview.other.Contants.INPUT_PATH;
 import static com.interview.question004.Words.readFileSplitByLine;
 
 /**

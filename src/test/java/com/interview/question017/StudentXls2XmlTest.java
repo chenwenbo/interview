@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.INPUT_XLS_PATH;
-import static com.interview.other.Contans.OUTPUT_XML_PATH;
+import static com.interview.other.Contants.INPUT_XLS_PATH;
+import static com.interview.other.Contants.OUTPUT_XML_PATH;
 
 /**
  * 第 0016 题： 纯文本文件 numbers.txt, 里面的内容（包括方括号）如下所示：

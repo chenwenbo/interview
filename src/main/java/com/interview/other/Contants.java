@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Created by apple on 2016/09/22 21:41.
  */
-public class Contans {
+public class Contants {
 
     public static final String CODE_RESOURCE_PATH = "src";
 

@@ -8,10 +8,10 @@ import java.io.File;
 public class ProjectPrepare {
 
     public void file() {
-        createDir(Contans.OUTPUT_GIRL_PATH);
-        createDir(Contans.OUTPUT_IMAGE_PATH);
-        createDir(Contans.OUTPUT_XLS_PATH);
-        createDir(Contans.OUTPUT_XML_PATH);
+        createDir(Contants.OUTPUT_GIRL_PATH);
+        createDir(Contants.OUTPUT_IMAGE_PATH);
+        createDir(Contants.OUTPUT_XLS_PATH);
+        createDir(Contants.OUTPUT_XML_PATH);
     }
 
     private void createDir(String path) {

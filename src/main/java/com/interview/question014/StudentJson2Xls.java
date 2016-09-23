@@ -14,8 +14,8 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
-import static com.interview.other.Contans.INPUT_JSON_PATH;
-import static com.interview.other.Contans.OUTPUT_XLS_PATH;
+import static com.interview.other.Contants.INPUT_JSON_PATH;
+import static com.interview.other.Contants.OUTPUT_XLS_PATH;
 import static com.interview.utils.ExcelUtils.setCellValue;
 
 

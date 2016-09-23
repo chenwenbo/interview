@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.INPUT_IMAGE_PATH;
-import static com.interview.other.Contans.OUTPUT_IMAGE_PATH;
+import static com.interview.other.Contants.INPUT_IMAGE_PATH;
+import static com.interview.other.Contants.OUTPUT_IMAGE_PATH;
 import static com.interview.question005.IphoneSizeEnum.IPHONE5;
 
 /**
