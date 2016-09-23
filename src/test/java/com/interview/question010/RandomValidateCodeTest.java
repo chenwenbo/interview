@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.interview.other.Contans.INPUT_IMAGE_PATH;
+import static com.interview.other.Contans.OUTPUT_IMAGE_PATH;
 
 /**
  * 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片
@@ -15,6 +15,6 @@ public class RandomValidateCodeTest {
 
     @Test
     public void generateValidateCodeTest() throws IOException {
-        randomValidateCode.getRandcode(INPUT_IMAGE_PATH + "validateCode.jpeg");
+        randomValidateCode.getRandcode(OUTPUT_IMAGE_PATH + "validateCode.jpeg");
     }
 }
