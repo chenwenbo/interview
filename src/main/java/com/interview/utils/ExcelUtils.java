@@ -23,4 +23,17 @@ public class ExcelUtils {
         }
     }
 
+    public static Object getCellValue(Cell cell) {
+        Object cellValue = new Object();
+        switch (cell.getCellType()) {
+            case Cell.CELL_TYPE_NUMERIC:
+               cellValue = cell.getNumericCellValue();
+                break;
+            case Cell.CELL_TYPE_STRING:
+                cellValue = cell.getStringCellValue();
+                break;
+        }
+        return cellValue;
+    }
+
 }

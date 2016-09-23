@@ -1,6 +1,5 @@
 package com.interview.other;
 
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jdom.Comment;
@@ -15,6 +14,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public abstract class Xls2Xml {
+
+    public abstract String getFirstLevelElement();
+
+    public abstract String getXmlComment();
+
+    public abstract String convertXls2Json(XSSFSheet sheet);
 
     public void writeXml(String xlsPath, String xmlPath) throws IOException {
         Element root = new Element("root");
@@ -31,12 +36,7 @@ public abstract class Xls2Xml {
         outter.setFormat(Format.getPrettyFormat());
         outter.output(doc, new FileWriter(new File(xmlPath)));
     }
-
-    public abstract String getFirstLevelElement();
-
-    public abstract String getXmlComment();
-
-    public String getJsonData(String xlsPath) throws IOException {
+    private String getJsonData(String xlsPath) throws IOException {
         File file = new File(xlsPath);
         if (!file.exists()) {
             file.createNewFile();
@@ -50,18 +50,5 @@ public abstract class Xls2Xml {
         }
     }
 
-    public abstract String convertXls2Json(XSSFSheet sheet);
 
-    public Object getCellValue(Cell cell) {
-        Object cellValue = new Object();
-        switch (cell.getCellType()) {
-            case Cell.CELL_TYPE_NUMERIC:
-               cellValue = cell.getNumericCellValue();
-                break;
-            case Cell.CELL_TYPE_STRING:
-                cellValue = cell.getStringCellValue();
-                break;
-        }
-        return cellValue;
-    }
 }

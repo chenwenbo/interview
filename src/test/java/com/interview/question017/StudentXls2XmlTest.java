@@ -1,5 +1,6 @@
 package com.interview.question017;
 
+import com.interview.other.Xls2Xml;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class StudentXls2XmlTest {
 
     @Test
     public void convertStudentXls2XmlTest() throws IOException {
-        StudentXls2Xml studentXls2Xml = new StudentXls2Xml();
+        Xls2Xml studentXls2Xml = new StudentXls2Xml();
         studentXls2Xml.writeXml(INPUT_XLS_PATH + JSON_STUDENT_XLSX, OUTPUT_XML_PATH + STUDENTS_XML);
     }
 }

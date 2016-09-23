@@ -1,5 +1,6 @@
 package com.interview.question018;
 
+import com.interview.other.Xls2Xml;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class CityXls2XmlTest {
 
     @Test
     public void convertCityXls2XmlTest() throws IOException {
-        CityXls2Xml cityXls2Xml = new CityXls2Xml();
+        Xls2Xml cityXls2Xml = new CityXls2Xml();
         cityXls2Xml.writeXml(INPUT_XLS_PATH + JSON_CITY_XLSX, OUTPUT_XML_PATH + CITY_XML);
     }
 
