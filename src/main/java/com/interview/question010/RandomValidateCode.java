@@ -45,7 +45,6 @@ public class RandomValidateCode {
      * 生成随机图片
      */
     public void getRandcode(String targetPath) throws IOException {
-        FileOutputStream fos = null;
         // BufferedImage类是具有缓冲区的Image类,Image类是用于描述图像信息的类
         BufferedImage image = new BufferedImage(width, height,
                 BufferedImage.TYPE_INT_BGR);
@@ -62,15 +61,10 @@ public class RandomValidateCode {
         for (int i = 1; i <= stringNum; i++) {
             randomString = drowString(g, randomString, i);
         }
-        try {
-            fos = new FileOutputStream(targetPath);
+        try (
+            FileOutputStream fos = new FileOutputStream(targetPath);
+        ){
             ImageIO.write(image, "JPEG", fos);// 将内存中的图片通过流动形式输出到客户端
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (fos != null) {
-                fos.close();
-            }
         }
     }
 

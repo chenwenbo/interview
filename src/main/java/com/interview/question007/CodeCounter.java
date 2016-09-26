@@ -60,11 +60,11 @@ public class CodeCounter {
      *
      * @param f
      */
-    private void count(File f) {
-        BufferedReader br = null;
+    private void count(File f) throws IOException {
         boolean flag = false;
-        try {
-            br = new BufferedReader(new FileReader(f));
+        try (
+            BufferedReader br = new BufferedReader(new FileReader(f));
+        ){
             String line = "";
             while ((line = br.readLine()) != null) {
                 line = line.trim(); // 除去注释前的空格
@@ -87,19 +87,6 @@ public class CodeCounter {
                 }
             }
             files++;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                    br = null;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }
