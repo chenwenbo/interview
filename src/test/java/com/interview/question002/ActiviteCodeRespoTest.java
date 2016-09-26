@@ -1,10 +1,8 @@
 package com.interview.question002;
 
-import com.interview.question001.ActiviteCode;
 import org.junit.Test;
 
 import java.sql.SQLException;
-import java.util.Set;
 
 /**
  * Created by Administrator on 2016/9/23.
@@ -15,10 +13,10 @@ public class ActiviteCodeRespoTest {
     @Test
     public void test() throws SQLException, ClassNotFoundException {
         //given
-        ActiviteCodeRespo activiteCodeRespo = new ActiviteCodeRespo();
-        ActiviteCode activiteCode = new ActiviteCode();
+//        ActiviteCodeRespo activiteCodeRespo = new ActiviteCodeRespo();
+//        ActiviteCode activiteCode = new ActiviteCode();
         //when
-        Set<String> activiteCodes = activiteCode.getActiviteCode(200, 20);
-        activiteCodeRespo.saveActiviteCodes(activiteCodes.iterator(),"开年庆");
+//        Set<String> activiteCodes = activiteCode.getActiviteCode(200, 20);
+//        activiteCodeRespo.saveActiviteCodes(activiteCodes.iterator(),"开年庆");
     }
 }
