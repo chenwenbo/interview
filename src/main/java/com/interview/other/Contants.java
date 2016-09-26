@@ -15,6 +15,8 @@ public class Contants {
 
     public static final String INPUT_IMAGE_PATH = INPUT_PATH + File.separator + "image" + File.separator;
 
+    public static final String INPUT_AUDIO_PATH = INPUT_PATH + File.separator + "audio" + File.separator;
+
     public static final String INPUT_DIARIES_PATH = INPUT_PATH + File.separator + "diaries" + File.separator;
 
     public static final String INPUT_JSON_PATH = INPUT_PATH + File.separator + "json" + File.separator;

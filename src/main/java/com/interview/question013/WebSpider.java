@@ -16,6 +16,10 @@ import static com.interview.other.Contants.OUTPUT_GIRL_PATH;
  */
 public class WebSpider {
 
+    public static void main(String[] args) throws IOException {
+        WebSpider webSpider = new WebSpider();
+        webSpider.fetchImage("http://tieba.baidu.com/p/2166231880");
+    }
 
     public void fetchImage(String url) throws IOException {
         Elements images = getImage(url);
