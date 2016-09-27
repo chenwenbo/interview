@@ -1,4 +1,4 @@
-package com.interview.Collection;
+package com.interview.collection;
 
 public class ArrayList {
 

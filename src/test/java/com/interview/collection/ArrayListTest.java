@@ -1,6 +1,5 @@
 package com.interview.collection;
 
-import com.interview.Collection.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
