@@ -1,4 +1,4 @@
-package com.interview.singleton;
+package com.interview.patten.singleton;
 
 public enum EnumSingleton {
 

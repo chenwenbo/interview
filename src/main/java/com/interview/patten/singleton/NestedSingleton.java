@@ -1,4 +1,4 @@
-package com.interview.singleton;
+package com.interview.patten.singleton;
 
 /**
  * 嵌套静态内部类

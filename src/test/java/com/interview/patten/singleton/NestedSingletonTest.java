@@ -1,4 +1,4 @@
-package com.interview.singleton;
+package com.interview.patten.singleton;
 
 import org.junit.Test;
 
