@@ -16,9 +16,14 @@ public class HtmlContentParse {
      * @param url
      * @return
      */
-    public static String getContent(String url) throws IOException {
+    public static String getContentByUrl(String url) throws IOException {
         Document doc = Jsoup.connect(url).get();
         return doc.getAllElements().text();
     }
+
+    public static String getContentByHtml(String html) {
+        return Jsoup.parse(html).body().text();
+    }
+
 
 }

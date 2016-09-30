@@ -17,9 +17,13 @@ public class HtmlLinkParse {
      * @param url other method: Elements links = doc.select("a[href]");
      * @return
      */
-    public static Elements getLink(String url) throws IOException {
+    public static Elements getLinkByUrl(String url) throws IOException {
         Document doc = Jsoup.connect(url).get();
         return doc.getElementsByTag("a");
+    }
+
+    public static String getLinkByHtml(String html) throws IOException {
+        return Jsoup.parse(html).getElementsByTag("a").text();
     }
 
 }
