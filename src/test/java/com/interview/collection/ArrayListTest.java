@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Administrator on 2016/9/18.
- */
 public class ArrayListTest {
 
     private ArrayList list = new ArrayList();
