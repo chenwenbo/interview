@@ -1,8 +1,9 @@
 package com.interview.java8;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static java.util.stream.Collectors.toSet;
 
 /**
  * 专辑
@@ -22,13 +23,10 @@ public class Album {
     private List<Track> tracks;
 
     public Set<String> findLongTracks(List<Album> albums) {
-        Set<String> trackNames = new HashSet<>();
-        albums.forEach(album -> {
-            album.getTracks().stream().filter(track -> track.getLength() > 60)
-                    .map(c->c.getName())
-                    .forEach(c->trackNames.add(c));
-        });
-        return trackNames;
+        return albums.stream().flatMap(c->c.getTracks().stream())
+                .filter(c->c.getLength()>60)
+                .map(c -> c.getName())
+                .collect(toSet());
     }
 
     public Album() {
