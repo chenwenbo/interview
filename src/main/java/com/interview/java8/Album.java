@@ -23,7 +23,8 @@ public class Album {
     private List<Track> tracks;
 
     public Set<String> findLongTracks(List<Album> albums) {
-        return albums.stream().flatMap(c->c.getTracks().stream())
+        return albums.stream()
+                .flatMap(c->c.getTracks().stream())
                 .filter(c->c.getLength()>60)
                 .map(c -> c.getName())
                 .collect(toSet());
