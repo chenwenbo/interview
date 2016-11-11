@@ -23,13 +23,13 @@ public class Album {
 
     public Set<String> findLongTracks(List<Album> albums) {
         Set<String> trackNames = new HashSet<>();
-        for (Album album : albums) {
-            for (Track track : album.getTracks()) {
+        albums.forEach(album -> {
+            album.getTracks().forEach(track -> {
                 if (track.getLength() > 60) {
                     trackNames.add(track.getName());
                 }
-            }
-        }
+            });
+        });
         return trackNames;
     }
 
