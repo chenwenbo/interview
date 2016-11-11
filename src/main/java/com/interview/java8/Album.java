@@ -24,11 +24,8 @@ public class Album {
     public Set<String> findLongTracks(List<Album> albums) {
         Set<String> trackNames = new HashSet<>();
         albums.forEach(album -> {
-            album.getTracks().forEach(track -> {
-                if (track.getLength() > 60) {
-                    trackNames.add(track.getName());
-                }
-            });
+            album.getTracks().stream().filter(track -> track.getLength() > 60)
+                                    .forEach(track -> trackNames.add(track.getName()));
         });
         return trackNames;
     }
