@@ -25,7 +25,8 @@ public class Album {
         Set<String> trackNames = new HashSet<>();
         albums.forEach(album -> {
             album.getTracks().stream().filter(track -> track.getLength() > 60)
-                                    .forEach(track -> trackNames.add(track.getName()));
+                    .map(c->c.getName())
+                    .forEach(c->trackNames.add(c));
         });
         return trackNames;
     }
