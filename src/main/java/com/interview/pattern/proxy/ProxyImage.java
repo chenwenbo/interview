@@ -10,7 +10,7 @@ public class ProxyImage implements Image{
 
     @Override
     public void display() {
-        System.out.println("proxt before action");
+        System.out.println("proxy before action");
         image.display();
         System.out.println("proxy after action");
     }

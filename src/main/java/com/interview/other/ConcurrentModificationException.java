@@ -6,6 +6,18 @@ import java.util.List;
 
 public class ConcurrentModificationException {
 
+    class User {
+        private String userName;
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+    }
+
     public static void main(String[] args) {
         List<String> strs = new ArrayList<String>();
         strs.add("A");

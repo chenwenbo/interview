@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class LambdaTest {
     public static void main(String[] args) {
         List<String> strs = Arrays.asList("aaa", "bbb");
-        strs.forEach(c -> System.out.println(c));
+        strs.forEach(System.out::println);
         strs.forEach(c -> {
             if (c.equals("aaa")) {
                 System.out.println("bingo");
@@ -27,7 +27,7 @@ public class LambdaTest {
 
         String result = map.entrySet().stream()
                 .filter(c -> !c.getKey().equals("key1"))
-                .map(c -> c.getKey())
+                .map(Map.Entry::getKey)
                 .collect(Collectors.joining(","));
         System.out.println(result);
 

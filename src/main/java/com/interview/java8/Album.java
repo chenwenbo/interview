@@ -26,7 +26,7 @@ public class Album {
         return albums.stream()
                 .flatMap(c->c.getTracks().stream())
                 .filter(c->c.getLength()>60)
-                .map(c -> c.getName())
+                .map(Track::getName)
                 .collect(toSet());
     }
 

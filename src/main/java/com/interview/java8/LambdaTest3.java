@@ -1,6 +1,5 @@
 package com.interview.java8;
 
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
@@ -9,6 +8,6 @@ import java.util.stream.Stream;
  */
 public class LambdaTest3 {
     public static void main(String[] args) {
-        Stream<String> stream = Arrays.asList("111", "222", "333", "444", "555").stream();
+        Stream<String> stream = Stream.of("111", "222", "333", "444", "555");
     }
 }
