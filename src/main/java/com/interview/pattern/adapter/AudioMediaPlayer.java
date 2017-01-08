@@ -7,7 +7,6 @@ package com.interview.pattern.adapter;
  */
 public class AudioMediaPlayer implements MediaPlayer{
 
-
     @Override
     public void play(MediaEnum mediaEnum, String fileName) {
         if (mediaEnum.equals(MediaEnum.MP3)) {

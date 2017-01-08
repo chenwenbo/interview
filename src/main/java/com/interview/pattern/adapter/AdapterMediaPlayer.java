@@ -1,7 +1,7 @@
 package com.interview.pattern.adapter;
 
 /**
- * description :
+ * description : 为原有的类添加额外的功能
  * author : wenbo.chen@boldseas.com
  * Created time : 2017/01/07 15:07.
  */
